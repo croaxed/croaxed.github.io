@@ -308,16 +308,30 @@
 
     .app-card:hover::before { opacity: 1; }
 
-    .app-icon {
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-radius: 12px;
-      margin-bottom: 1.25rem;
+    .app-header {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .app-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+
+    .app-meta { flex: 1; }
+
+    .app-platform {
+      font-size: 0.7rem;
+      font-family: 'Courier New', monospace;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-top: 0.2rem;
     }
 
     .app-name {
@@ -376,9 +390,15 @@
     .legal-card:hover { border-color: rgba(232,64,64,0.3); }
 
     .legal-icon {
-      font-size: 1.25rem;
+      width: 36px;
+      height: 36px;
+      background: rgba(232,64,64,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      margin-top: 0.1rem;
+      color: var(--accent);
     }
 
     .legal-title {
@@ -479,8 +499,14 @@
     Simple, rápido, sin complicaciones.
   </p>
   <div class="hero-cta fade-in">
-    <a href="#apps" class="btn-primary">Ver apps →</a>
-    <a href="privacy.html" class="btn-ghost">Política de privacidad</a>
+    <a href="#apps" class="btn-primary">
+      Ver apps
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <a href="privacy.html" class="btn-ghost">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Política de privacidad
+    </a>
   </div>
   <div class="scroll-hint">
     <div class="scroll-line"></div>
@@ -492,8 +518,13 @@
   <div class="section-label">Aplicaciones</div>
   <div class="apps-grid">
     <div class="app-card">
-      <div class="app-icon">📚</div>
-      <div class="app-name">MangaRex</div>
+      <div class="app-header">
+        <img src="mangarex-icon.png" alt="MangaRex" class="app-logo" />
+        <div class="app-meta">
+          <div class="app-name">MangaRex</div>
+          <div class="app-platform">Android · Lector de manga</div>
+        </div>
+      </div>
       <p class="app-desc">
         Lector de manga rápido e intuitivo. Seguí tus series favoritas, guardá tu progreso y leé sin interrupciones.
       </p>
@@ -501,6 +532,7 @@
         <span class="tag">Android</span>
         <span class="tag">Lector</span>
         <span class="tag">Manga</span>
+        <span class="tag">Gratis</span>
       </div>
     </div>
   </div>
@@ -510,24 +542,30 @@
   <div class="section-label">Documentos legales</div>
   <div class="legal-grid">
     <a href="privacy.html" class="legal-card">
-      <div class="legal-icon">🔒</div>
+      <div class="legal-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
       <div>
         <div class="legal-title">Política de Privacidad</div>
         <p class="legal-desc">Cómo manejamos y protegemos tu información personal.</p>
       </div>
     </a>
     <div class="legal-card" style="cursor:default">
-      <div class="legal-icon">📋</div>
+      <div class="legal-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
       <div>
         <div class="legal-title">Términos de Uso</div>
         <p class="legal-desc">Al usar MangaRex aceptás nuestros términos de servicio.</p>
       </div>
     </div>
     <div class="legal-card" style="cursor:default">
-      <div class="legal-icon">📬</div>
+      <div class="legal-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
       <div>
         <div class="legal-title">Contacto</div>
-        <p class="legal-desc"><a href="mailto:croaxed@gmail.com" style="color:var(--accent)">croaxed@gmail.com</a></p>
+        <p class="legal-desc"><a href="mailto:croaxed1432@gmail.com" style="color:var(--accent)">croaxed1432@gmail.com</a></p>
       </div>
     </div>
   </div>
@@ -535,11 +573,4 @@
 
 <footer>
   <div class="footer-copy">© 2025 Croaxed · Todos los derechos reservados</div>
-  <div class="footer-links">
-    <a href="privacy.html">Privacidad</a>
-    <a href="mailto:croaxed@gmail.com">Contacto</a>
-  </div>
-</footer>
-
-</body>
-</html>
+  <div class="footer-lin
